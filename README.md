@@ -80,20 +80,74 @@ If you want your site at `https://YOUR_USERNAME.github.io/`:
 2. Push your code to this repository
 3. GitHub Pages will automatically deploy from the main branch
 
+## Folder Structure
+
+```
+Profile/
+├── assets/              # Images and media files
+│   ├── Sunil_Thakur_v1.jpg
+│   └── README.md
+├── data/                # Private documents (gitignored)
+│   ├── SUNIL_THAKUR_Resume_v4.pdf
+│   └── README.md
+├── index.html
+├── styles.css
+├── script.js
+├── README.md
+└── .gitignore
+```
+
 ## Customization
 
 ### Update Profile Image
-Replace the profile placeholder in `index.html`:
-```html
-<div class="profile-placeholder">
-    <i class="fas fa-user"></i>
-</div>
+
+**Your profile picture is automatically loaded from `assets/Sunil_Thakur_v1.jpg`**
+
+To update your profile picture:
+
+1. **Add new version to assets folder:**
+   ```bash
+   cp /path/to/new-photo.jpg assets/Sunil_Thakur_v2.jpg
+   ```
+
+2. **Update index.html (line ~66):**
+   Change `src="assets/Sunil_Thakur_v1.jpg"` to `src="assets/Sunil_Thakur_v2.jpg"`
+
+3. **Commit and push:**
+   ```bash
+   git add assets/Sunil_Thakur_v2.jpg index.html
+   git commit -m "Update profile picture to v2"
+   git push
+   ```
+
+4. **Website updates automatically** in 1-2 minutes
+
+**Recommended image specifications:**
+- Format: JPG or PNG
+- Size: 500x500 pixels (square)
+- File size: Under 500KB
+- Name pattern: `Sunil_Thakur_vX.jpg` (versioned)
+
+### Managing Resume Versions
+
+The `data/` folder is gitignored - perfect for storing resume versions locally:
+
+```
+data/
+├── SUNIL_THAKUR_Resume_v1.pdf
+├── SUNIL_THAKUR_Resume_v2.pdf
+├── SUNIL_THAKUR_Resume_v3.pdf
+└── SUNIL_THAKUR_Resume_v4.pdf
 ```
 
-With an actual image:
-```html
-<img src="path/to/your-photo.jpg" alt="Sunil Thakur" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-```
+These files stay on your local machine only and won't be pushed to GitHub.
+
+### Blog Section
+
+The website includes a Blog section with placeholder articles. To add real blog posts:
+- Link to external platforms (Medium, Dev.to, Hashnode)
+- Create separate HTML pages for each post
+- Use a static site generator like Jekyll or Hugo (optional)
 
 ### Change Colors
 Edit the CSS variables in `styles.css`:

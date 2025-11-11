@@ -18,5 +18,8 @@ Desktop.ini
 # Logs
 *.log
 
-# Optional: Resume file (uncomment if you don't want to include it)
-# *.pdf
+# Data folder - Resume versions and private documents
+data/
+
+# PDF files (resumes)
+*.pdf
